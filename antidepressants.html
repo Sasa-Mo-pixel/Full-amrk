@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" id="html-tag">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antidepressants - Full Lecture</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .book-page { background: #1e293b; border-radius: 10px; padding: 40px; margin-top: 20px; line-height: 1.9; font-size: 17px; color: #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .book-page h2 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; margin-top: 30px; margin-bottom: 15px; font-size: 24px; text-transform: uppercase; }
+  .book-page h3 { color: #e2e8f0; margin-top: 25px; margin-bottom: 10px; font-size: 20px; text-decoration: underline; }
+  .book-page p { margin-bottom: 15px; text-align: justify; }
+  .book-page ul { margin-bottom: 20px; padding-left: 25px; }
+  .rtl-page .book-page ul { padding-left: 0; padding-right: 25px; }
+  .book-page li { margin-bottom: 10px; }
+  strong { color: #38bdf8; }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> <span id="back-txt">Back</span></a>
+
+<div class="content">
+  <div class="title-area">
+    <h1><i class="fa-solid fa-face-smile-beam"></i> Antidepressant Drugs</h1>
+    <button class="btn-lang" onclick="toggleLanguage()">ترجمة المحاضرة كاملة</button>
+  </div>
+
+  <div id="en-content" style="display: block;">
+    <div class="book-page">
+      <h2>Classification of Antidepressants:</h2>
+      
+      <h3>1. SSRIs (Selective Serotonin Reuptake Inhibitors):</h3>
+      <p>The first-line treatment for depression due to fewer side effects. Examples: Fluoxetine (Prozac), Sertraline (Zoloft), Paroxetine (Paxil).</p>
+
+      <h3>2. Tricyclic Antidepressants (TCAs):</h3>
+      <p>Older class of drugs. Examples: Amitriptyline (Elavil), Imipramine (Tofranil). Side effects include anticholinergic effects (dry mouth, blurred vision) and orthostatic hypotension.</p>
+
+      <h3>3. MAOIs (Monoamine Oxidase Inhibitors):</h3>
+      <p>Example: Phenelzine (Nardil). Requires strict dietary restrictions (avoid tyramine-rich foods like aged cheese and red wine) to prevent <strong>Hypertensive Crisis</strong>.</p>
+
+      <h2>Nursing Interventions:</h2>
+      <ul>
+        <li>Take SSRIs in the morning to prevent insomnia.</li>
+        <li>Instruct patient that therapeutic effect may take 2-4 weeks.</li>
+        <li>Monitor for Serotonin Syndrome if combined with other serotonergic drugs.</li>
+        <li>Encourage patient to change positions slowly to prevent dizziness.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="ar-content" style="display: none; direction: rtl; text-align: right; font-family: 'Cairo', sans-serif;">
+    <div class="book-page">
+      <h2>تصنيف مضادات الاكتئاب:</h2>
+      
+      <h3>1. مثبطات استرداد السيروتونين الانتقائية (SSRIs):</h3>
+      <p>تعتبر الخيار الأول للعلاج بسبب قلة آثارها الجانبية. مثل: فلوكسيتين، سيرترالين.</p>
+
+      <h3>2. مضادات الاكتئاب ثلاثية الحلقات (TCAs):</h3>
+      <p>فئة أقدم من الأدوية. مثل: أميتريبتيلين. تشمل آثارها الجانبية جفاف الفم وزغللة العين وانخفاض ضغط الدم الانتصابي.</p>
+
+      <h3>3. مثبطات أكسيداز أحادي الأمين (MAOIs):</h3>
+      <p>تتطلب قيوداً غذائية صارمة (تجنب الأطعمة الغنية بالتيرامين مثل الجبن القديم) لتجنب <strong>نوبة ارتفاع ضغط الدم</strong>.</p>
+
+      <h2>التدخلات التمريضية:</h2>
+      <ul>
+        <li>تناول أدوية SSRIs في الصباح لتجنب الأرق.</li>
+        <li>تنبيه المريض أن التأثير العلاجي قد يستغرق 2-4 أسابيع.</li>
+        <li>مراقبة متلازمة السيروتونين عند الجمع بين أدوية معينة.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'ar') toggleLanguage(true);
+  };
+
+  function toggleLanguage(forceAr = false) {
+    const en = document.getElementById('en-content');
+    const ar = document.getElementById('ar-content');
+    const btn = document.querySelector('.btn-lang');
+    const backTxt = document.getElementById('back-txt');
+    if (en.style.display === 'block' || forceAr) {
+      en.style.display = 'none'; ar.style.display = 'block';
+      btn.innerText = "View English Version"; backTxt.innerText = "رجوع للفهرس";
+      document.getElementById('html-tag').dir = "rtl";
+    } else {
+      en.style.display = 'block'; ar.style.display = 'none';
+      btn.innerText = "ترجمة المحاضرة كاملة"; backTxt.innerText = "Back";
+      document.getElementById('html-tag').dir = "ltr";
+    }
+  }
+</script>
+</body>
+</html>

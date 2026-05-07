@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" id="html-tag">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Stabilizers - Full Lecture</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .book-page { background: #1e293b; border-radius: 10px; padding: 40px; margin-top: 20px; line-height: 1.9; font-size: 17px; color: #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .book-page h2 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; margin-top: 30px; margin-bottom: 15px; font-size: 24px; text-transform: uppercase; }
+  .book-page h3 { color: #e2e8f0; margin-top: 25px; margin-bottom: 10px; font-size: 20px; text-decoration: underline; }
+  .book-page p { margin-bottom: 15px; text-align: justify; }
+  .book-page ul { margin-bottom: 20px; padding-left: 25px; }
+  .rtl-page .book-page ul { padding-left: 0; padding-right: 25px; }
+  .book-page li { margin-bottom: 10px; }
+  strong { color: #38bdf8; }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> <span id="back-txt">Back</span></a>
+
+<div class="content">
+  <div class="title-area">
+    <h1><i class="fa-solid fa-scale-balanced"></i> Mood Stabilizers</h1>
+    <button class="btn-lang" onclick="toggleLanguage()">ترجمة المحاضرة كاملة</button>
+  </div>
+
+  <div id="en-content" style="display: block;">
+    <div class="book-page">
+      <h2>Lithium Carbonate:</h2>
+      <p>Lithium is the mainstay of treatment for bipolar disorder. It stabilizes mood by affecting neurotransmitters in the brain.</p>
+      <h3>Therapeutic Window:</h3>
+      <ul>
+        <li>For acute mania: 1.0 to 1.5 mEq/L.</li>
+        <li>For maintenance: 0.6 to 1.2 mEq/L.</li>
+      </ul>
+      <h3>Symptoms of Toxicity:</h3>
+      <p>Nausea, vomiting, severe diarrhea, blurred vision, ataxia (unsteady gait), and tinnitus (ringing in ears). Serum lithium levels above 1.5 mEq/L indicate toxicity.</p>
+
+      <h2>Anticonvulsant Drugs used as Mood Stabilizers:</h2>
+      <ul>
+        <li><strong>Valproic acid (Depakote)</strong></li>
+        <li><strong>Carbamazepine (Tegretol)</strong></li>
+        <li><strong>Lamotrigine (Lamictal)</strong></li>
+      </ul>
+
+      <h2>Nursing Role:</h2>
+      <p>Instruct the patient to maintain adequate salt and fluid intake while on Lithium. Monitor serum levels regularly (blood tests should be taken 12 hours after the last dose).</p>
+    </div>
+  </div>
+
+  <div id="ar-content" style="display: none; direction: rtl; text-align: right; font-family: 'Cairo', sans-serif;">
+    <div class="book-page">
+      <h2>كربونات الليثيوم:</h2>
+      <p>الليثيوم هو الدعامة الأساسية لعلاج الاضطراب ثنائي القطب. يعمل على استقرار الحالة المزاجية من خلال التأثير على النواقل العصبية.</p>
+      <h3>المستويات العلاجية:</h3>
+      <ul>
+        <li>للهوس الحاد: 1.0 إلى 1.5 mEq/L.</li>
+        <li>للحفاظ على الاستقرار: 0.6 إلى 1.2 mEq/L.</li>
+      </ul>
+      <h3>أعراض التسمم:</h3>
+      <p>الغثيان والقيء، الإسهال الشديد، زغللة العين، عدم الاتزان، وطنين الأذن. المستويات فوق 1.5 mEq/L تشير للتسمم.</p>
+
+      <h2>أدوية مضادة للتشنج تُستخدم كمثبتات مزاج:</h2>
+      <ul>
+        <li>حمض الفالبرويك.</li>
+        <li>كاربامازيبين.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'ar') toggleLanguage(true);
+  };
+
+  function toggleLanguage(forceAr = false) {
+    const en = document.getElementById('en-content');
+    const ar = document.getElementById('ar-content');
+    const btn = document.querySelector('.btn-lang');
+    const backTxt = document.getElementById('back-txt');
+    if (en.style.display === 'block' || forceAr) {
+      en.style.display = 'none'; ar.style.display = 'block';
+      btn.innerText = "View English Version"; backTxt.innerText = "رجوع للفهرس";
+      document.getElementById('html-tag').dir = "rtl";
+    } else {
+      en.style.display = 'block'; ar.style.display = 'none';
+      btn.innerText = "ترجمة المحاضرة كاملة"; backTxt.innerText = "Back";
+      document.getElementById('html-tag').dir = "ltr";
+    }
+  }
+</script>
+</body>
+</html>

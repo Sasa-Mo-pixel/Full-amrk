@@ -3,61 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NurseH+</title>
-
+<title>FULL MARK Home</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Sidebar -->
 <div class="sidebar">
-  <h2><i class="fa-solid fa-heart-pulse"></i> NurseH+</h2>
-
- <ul>
-  <li class="active"><i class="fa-solid fa-house"></i> Home</li>
-  <li><i class="fa-solid fa-notes-medical"></i> Conditions</li>
-  <li><i class="fa-solid fa-calculator"></i> Calculators</li>
-</ul>
+  <h2><i class="fa-solid fa-heart-pulse"></i> FULL MARK</h2>
+  <ul>
+    <li class="active" onclick="location.href='index.html'"><i class="fa-solid fa-house"></i> Home</li>
+    <li onclick="location.href='calculator.html'"><i class="fa-solid fa-calculator"></i> Calculator</li>
+    <li onclick="location.href='bmi.html'"><i class="fa-solid fa-weight-scale"></i> BMI Calculator</li>
+  </ul>
 </div>
 
-<!-- Main -->
 <div class="main">
-
-  <!-- Top Bar -->
   <div class="topbar">
-    <input type="text" id="search" placeholder="Search condition...">
+    <input type="text" id="search" placeholder="Search conditions or lectures...">
   </div>
 
-  <!-- Cards -->
   <div class="cards">
-
     <a href="shock.html" class="card">
       <i class="fa-solid fa-heart-pulse"></i>
       <h3>Shock</h3>
       <p>Circulatory failure</p>
-      <span>View →</span>
     </a>
-
     <a href="dka.html" class="card">
       <i class="fa-solid fa-syringe"></i>
       <h3>DKA</h3>
       <p>Hyperglycemia + Ketones</p>
-      <span>View →</span>
     </a>
-
     <a href="asthma.html" class="card">
       <i class="fa-solid fa-lungs"></i>
       <h3>Asthma</h3>
       <p>Airway narrowing</p>
-      <span>View →</span>
     </a>
 
-  </div>
+    <div class="card-container">
+      <a href="antipsychotics.html" class="card">
+        <i class="fa-solid fa-pills"></i>
+        <h3>Antipsychotics</h3>
+        <p>مضادات الذهان</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='antipsychotics.html?lang=ar'">ترجمة عربي</button>
+    </div>
 
+    <div class="card-container">
+      <a href="ect.html" class="card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>ECT</h3>
+        <p>الصدمات الكهربائية</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='ect.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="schizophrenia.html" class="card">
+        <i class="fa-solid fa-head-side-virus"></i>
+        <h3>Schizophrenia</h3>
+        <p>الفصام</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='schizophrenia.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="anxiety.html" class="card">
+        <i class="fa-solid fa-face-flushed"></i>
+        <h3>Anxiety Disorders</h3>
+        <p>اضطرابات القلق</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='anxiety.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="anti_anxiety.html" class="card">
+        <i class="fa-solid fa-capsules"></i>
+        <h3>Anti-Anxiety</h3>
+        <p>مضادات القلق</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='anti_anxiety.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="mood_disorders.html" class="card">
+        <i class="fa-solid fa-masks-theater"></i>
+        <h3>Mood Disorders</h3>
+        <p>اضطرابات المزاج</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='mood_disorders.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="mood_stabilizers.html" class="card">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <h3>Mood Stabilizers</h3>
+        <p>مثبتات المزاج</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='mood_stabilizers.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+    <div class="card-container">
+      <a href="antidepressants.html" class="card">
+        <i class="fa-solid fa-face-smile-beam"></i>
+        <h3>Antidepressants</h3>
+        <p>مضادات الاكتئاب</p>
+      </a>
+      <button class="mini-translate" onclick="location.href='antidepressants.html?lang=ar'">ترجمة عربي</button>
+    </div>
+
+  </div>
 </div>
 
 <script src="script.js"></script>

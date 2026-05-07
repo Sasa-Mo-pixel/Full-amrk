@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" id="html-tag">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Disorders - Full Lecture</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .book-page { background: #1e293b; border-radius: 10px; padding: 40px; margin-top: 20px; line-height: 1.9; font-size: 17px; color: #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .book-page h2 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; margin-top: 30px; margin-bottom: 15px; font-size: 24px; text-transform: uppercase; }
+  .book-page h3 { color: #e2e8f0; margin-top: 25px; margin-bottom: 10px; font-size: 20px; text-decoration: underline; }
+  .book-page p { margin-bottom: 15px; text-align: justify; }
+  .book-page ul { margin-bottom: 20px; padding-left: 25px; }
+  .rtl-page .book-page ul { padding-left: 0; padding-right: 25px; }
+  .book-page li { margin-bottom: 10px; }
+  strong { color: #38bdf8; }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> <span id="back-txt">Back</span></a>
+
+<div class="content">
+  <div class="title-area">
+    <h1><i class="fa-solid fa-masks-theater"></i> Mood Disorders</h1>
+    <button class="btn-lang" onclick="toggleLanguage()">ترجمة المحاضرة كاملة</button>
+  </div>
+
+  <div id="en-content" style="display: block;">
+    <div class="book-page">
+      <h2>Introduction:</h2>
+      <p>Mood disorders, also called affective disorders, are pervasive alterations in emotions that are manifested by depression or mania or both. They are the most common psychiatric diagnoses associated with suicide.</p>
+
+      <h2>Major Depressive Disorder (MDD):</h2>
+      <p>Characterized by one or more episodes of depressed mood associated with loss of interest or pleasure in daily activities. Symptoms must last at least 2 weeks.</p>
+      <ul>
+        <li><strong>Anhedonia:</strong> Loss of interest or pleasure.</li>
+        <li><strong>Psychomotor retardation:</strong> Slowed physical movement.</li>
+        <li><strong>Sleep disturbances:</strong> Insomnia or hypersomnia.</li>
+      </ul>
+
+      <h2>Bipolar Disorder:</h2>
+      <p>Bipolar disorder is characterized by extreme mood swings from episodes of mania to episodes of depression. During manic episodes, patients may have grandiose delusions, talkativeness, and reduced need for sleep.</p>
+
+      <h2>Nursing Care:</h2>
+      <p>Ensure safety (suicide precautions), monitor intake and output, and encourage expression of feelings. For manic patients, reduce environmental stimuli and set clear limits on behavior.</p>
+    </div>
+  </div>
+
+  <div id="ar-content" style="display: none; direction: rtl; text-align: right; font-family: 'Cairo', sans-serif;">
+    <div class="book-page">
+      <h2>مقدمة:</h2>
+      <p>اضطرابات المزاج هي تغيرات منتشرة في العواطف تظهر في صورة اكتئاب أو هوس أو كليهما. وهي التشخيصات النفسية الأكثر ارتباطاً بخطر الانتحار.</p>
+
+      <h2>الاضطراب الاكتئابي الشديد:</h2>
+      <p>يتميز بنوبات من المزاج المكتئب وفقدان الاهتمام بالأنشطة اليومية لمدة لا تقل عن أسبوعين.</p>
+      <ul>
+        <li><strong>انعدام المتعة:</strong> فقدان الاهتمام أو اللذة.</li>
+        <li><strong>البطء النفسي الحركي:</strong> تباطؤ الحركة الجسدية.</li>
+      </ul>
+
+      <h2>الاضطراب ثنائي القطب:</h2>
+      <p>يتميز بتقلبات مزاجية حادة بين نوبات الهوس ونوبات الاكتئاب. خلال نوبات الهوس، قد يعاني المرضى من ضلالات العظمة وكثرة الكلام ونقص الحاجة للنوم.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'ar') toggleLanguage(true);
+  };
+
+  function toggleLanguage(forceAr = false) {
+    const en = document.getElementById('en-content');
+    const ar = document.getElementById('ar-content');
+    const btn = document.querySelector('.btn-lang');
+    const backTxt = document.getElementById('back-txt');
+    if (en.style.display === 'block' || forceAr) {
+      en.style.display = 'none'; ar.style.display = 'block';
+      btn.innerText = "View English Version"; backTxt.innerText = "رجوع للفهرس";
+      document.getElementById('html-tag').dir = "rtl";
+    } else {
+      en.style.display = 'block'; ar.style.display = 'none';
+      btn.innerText = "ترجمة المحاضرة كاملة"; backTxt.innerText = "Back";
+      document.getElementById('html-tag').dir = "ltr";
+    }
+  }
+</script>
+</body>
+</html>
